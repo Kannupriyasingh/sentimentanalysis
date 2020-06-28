@@ -1,0 +1,19 @@
+c=0
+print("Enter the string (feedback)")
+text=input()
+user_text=text.split()
+print(user_text)
+for i in user_text:
+  if i=='good'or i=='best' or i=='better' or i=='awesome' or i=='outstanding' or i=='fantastic':
+    c=c+1
+  elif i=='bad' or i=='worst' or i=='damage' or i=='hate' :
+    c=c-1
+  else:
+    continue
+print(c)
+if c>0:
+  print("positive sentiment")
+elif c<0:
+  print("negative sentiment")
+else:
+  print("neutral sentiment")
