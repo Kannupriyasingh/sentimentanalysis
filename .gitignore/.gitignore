@@ -1,0 +1,35 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+
+using namespace std;
+
+int main()
+{ int c=0;
+    string s;
+   cout<<"Enter the string(feedback)"<<endl;
+   getline(cin, s);
+   istringstream abc(s);
+     do
+    {
+        string subs;
+        abc>> subs;
+        cout<<subs<<endl; // Tokenization
+        if(subs=="good"||subs=="best"||subs=="great"||subs=="awesome"||subs=="fantastic"||subs=="outstanding")
+        {c++;                    //Calculation
+        cout<<subs<<"(+1)"<<endl;}
+        else if(subs=="bad"||subs=="hate"||subs=="worst"||subs=="damage")
+        {c--;                   //Calculation 
+        cout<<subs<<"(-1)"<<endl;}
+        else                   
+        continue;               //Removing or ignoring the special character and non sentiment words
+    } while (abc);
+    cout<<"Value after calculation:"<<c<<endl;
+    if(c>0)
+    cout<<"Value is positive hence sentiment analysis is POSITIVE"<<endl;
+    else if(c<0)
+    cout<<"Value is negative hence sentiment analysis is NEGATIVE"<<endl;
+    else
+    cout<<"Value is zero hence sentiment analysis is NEUTRAL"<<endl;
+
+}
